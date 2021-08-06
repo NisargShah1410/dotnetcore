@@ -32,13 +32,13 @@ jobs:
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
-        name: .net-app
+        name: dotnet-app
         path: dotnetcorewebapp
         
     - name: Download artifact from build job
       uses: actions/download-artifact@v2
       with:
-        name: .net-app
+        name: dotnet-app
 
 
     - name: 'Deploy to Azure WebApp'
