@@ -24,10 +24,13 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore ./SampleCoreApp
     - name: Test
-      run: dotnet test --no-restore --verbosity normal ./SampleCoreApp
+      run: |
+        dotnet test --no-restore --verbosity normal ./SampleCoreApp
+        
     - name: dotnet publish
       run: |
-        dotnet publish -c Release -o dotnetcorewebapp ./SampleCoreApp 
+        dotnet add package coverlet
+        dotnet publish -c Release -o dotnetcorewebapp --collect:"XPlat Code Coverage" ./SampleCoreApp 
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
