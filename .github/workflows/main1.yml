@@ -25,7 +25,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore ./SampleCoreApp
     - name: Test
       run: |
-        dotnet add package coverlet
+        dotnet add package coverlet.collector
         dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" ./SampleCoreApp
         
     - name: dotnet publish
