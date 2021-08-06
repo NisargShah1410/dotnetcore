@@ -27,7 +27,7 @@ jobs:
       run: dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" ./SampleCoreApp
         
     - name: dotnet publish
-      run: dotnet publish -c Release -o dotnetcorewebapp ./SampleCoreApp 
+      run: dotnet publish -c Release -o dotnetcorewebapp 
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
