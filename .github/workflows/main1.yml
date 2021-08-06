@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore ./SampleCoreApp
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal ./SampleCoreApp
     - name: dotnet publish
       run: |
         dotnet publish -c Release -o dotnetcorewebapp 
