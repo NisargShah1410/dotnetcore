@@ -26,7 +26,7 @@ jobs:
     - name: Test
       run: |
         dotnet add package coverlet.collector
-        dotnet test --no-restore --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura ./SampleCoreApp
+        cd XUnit.Coverlet.Collector && dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" ./SampleCoreApp
         
     - name: dotnet publish
       run: dotnet publish -c Release -o dotnetcorewebapp ./SampleCoreApp 
