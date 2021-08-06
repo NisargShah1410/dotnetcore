@@ -27,10 +27,23 @@ jobs:
       run: dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" ./SampleCoreApp
         
     - name: dotnet publish
-      run: dotnet publish -c Release -o dotnetcorewebapp ./SampleCoreApp
+      run: dotnet publish -c Release -o ${{env.dotnetcore}}/myapp ./SampleCoreApp
+      
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v2
+      with:
+        name: .net-app
+        path: ${{env.dotnetcore}}/myapp
+        
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v2
+      with:
+        name: .net-app
+
+
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: sampledotnetcoredemo
+        app-name: 'sampledotnetcoredemo'
         publish-profile: ${{ secrets.DOTNET_WEB_APP }}
-        package: './dotnetcorewebapp'
+        package: .
