@@ -18,6 +18,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.100-rc.1.20452.10
+    - name: where are we
+      run: pwd
     - name: Install dependencies
       run: dotnet restore ./SampleCoreApp/
     - name: Build
