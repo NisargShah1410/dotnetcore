@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore ./SampleCoreApp/
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore ./SampleCoreApp
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: dotnet publish
