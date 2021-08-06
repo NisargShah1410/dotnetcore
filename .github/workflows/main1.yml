@@ -27,13 +27,13 @@ jobs:
       run: dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" ./SampleCoreApp
         
     - name: dotnet publish
-      run: dotnet publish -c Release -o ${{env.dotnetcore}}/myapp ./SampleCoreApp
+      run: dotnet publish -c Release -o dotnetcorewebapp ./SampleCoreApp
       
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
         name: .net-app
-        path: ${{env.dotnetcore}}/myapp
+        path: dotnetcorewebapp
         
     - name: Download artifact from build job
       uses: actions/download-artifact@v2
