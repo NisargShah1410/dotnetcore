@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCoreApp", "./SampleCoreApp/SampleCoreApp.csproj", "{90AFCAEF-1644-4372-94B1-6BAE3C39C86C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCoreApp", "/SampleCoreApp/SampleCoreApp.csproj", "{90AFCAEF-1644-4372-94B1-6BAE3C39C86C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCoreAppTests", "..\SampleCoreAppTests\SampleCoreAppTests.csproj", "{245FD1A2-2178-4954-A763-EA6A49FE592B}"
 EndProject
