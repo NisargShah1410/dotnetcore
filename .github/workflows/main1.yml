@@ -28,21 +28,9 @@ jobs:
         
     - name: dotnet publish
       run: dotnet publish -c Release -o dotnetcorewebapp ./SampleCoreApp
-      
-    - name: Upload artifact for deployment job
-      uses: actions/upload-artifact@v2
-      with:
-        name: .net-app
-        path: dotnetcorewebapp
-    
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v2
-      with:
-        name: .net-app
-
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'sampledotnetcoredemo'
+        app-name: sampledotnetcoredemo
         publish-profile: ${{ secrets.DOTNET_WEB_APP }}
-        package: .
+        package: './dotnetcorewebapp'
