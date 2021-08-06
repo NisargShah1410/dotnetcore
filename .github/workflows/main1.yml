@@ -24,9 +24,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore ./SampleCoreApp
     - name: Test
-      run: |
-        dotnet add package coverlet.collector --version 3.1.0
-        cd XUnit.Coverlet.Collector && dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" ./SampleCoreApp
+      run: dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage" ./SampleCoreApp
         
     - name: dotnet publish
       run: dotnet publish -c Release -o dotnetcorewebapp ./SampleCoreApp 
