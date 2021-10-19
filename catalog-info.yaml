@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: dotnetcore
   annotations:
-    github.com/project-slug: NisargShah1410/dotnetcore-webapp
+    github.com/project-slug: NisargShah1410/dotnetcore
 spec:
   type: website
   lifecycle: unknown
