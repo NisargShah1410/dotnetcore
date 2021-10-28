@@ -5,6 +5,7 @@ metadata:
   description: backstage.io
   annotations:
     github.com/project-slug: 'NisargShah1410/dotnetcore'
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: website
   lifecycle: production
