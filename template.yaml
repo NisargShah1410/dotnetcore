@@ -2,13 +2,13 @@ apiVersion: backstage.io/v1beta2
 kind: Template
 metadata:
   name: dotnet-template
-  title: Dotnet Template
+  title: TCS Dotnet App Template
   description: Create a website powered with Dotnet
   tags:
     - recommended
-    - react
+    - csharp
 spec:
-  owner: web@example.com
+  owner: mbuorg@tcs.com
   type: website
   parameters:
     - title: Provide some simple information
